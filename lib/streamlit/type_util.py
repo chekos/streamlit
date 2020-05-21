@@ -211,7 +211,7 @@ def convert_anything_to_df(df):
     pandas.DataFrame
 
     """
-    if is_type(df, _PANDAS_DF_TYPE_STR):
+    if is_type(df, _PANDAS_DF_TYPE_STR) or is_type(df, 'geopandas.GeoDataFrame'):
         return df
 
     if is_pandas_styler(df):
